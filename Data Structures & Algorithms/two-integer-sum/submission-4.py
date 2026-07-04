@@ -1,0 +1,11 @@
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        hashmap = defaultdict(int)
+         
+        for i in range(len(nums)):      # single pass solution
+            diff = target - nums[i]
+
+            if diff in hashmap:
+                return [hashmap[diff], i]
+
+            hashmap[nums[i]] = i
